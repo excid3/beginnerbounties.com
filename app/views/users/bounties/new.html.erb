@@ -1,7 +1,19 @@
-<div class="mx-auto md:w-2/3 w-full">
+<div class="mx-auto">
   <h1 class="font-bold text-4xl">New bounty</h1>
 
-  <%= render "form", bounty: @bounty %>
+  <div class="bg-white rounded shadow">
+    <div class="p-8 bg-gray-100">
+      <h3 class="mt-0 text-sm font-medium">Tips for posting bounties</h3>
+      <div class="mt-2 text-sm">
+        <p>Create a project bounty that is meaningful and manageable for junior developers to complete within a couple of days.</p>
+        <p>The bounty should provide a valuable learning opportunity and enable the developer to showcase their skills in a practical setting.</p>
+        <p>Please note that we reserve the right to decline any bounties that we feel are unsuitable or unrealistic for our junior developers.</p>
+      </div>
+    </div>
 
-  <%= link_to 'Back to bounties', bounties_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="p-8">
+      <%= render "form", bounty: @bounty %>
+      <%= link_to "Cancel", bounties_path, class: "no-underline ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    </div>
+  </div>
 </div>
