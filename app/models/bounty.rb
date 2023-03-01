@@ -10,5 +10,5 @@ class Bounty < ApplicationRecord
   validates :description, presence: true
   validates :status, inclusion: {in: STATUSES}
   validates :title, presence: true
-  validates :url, presence: true
+  validates :url, presence: true, format: {with: /\Ahttps?:\/\//}
 end
