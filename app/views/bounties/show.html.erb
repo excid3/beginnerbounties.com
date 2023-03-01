@@ -1,12 +1,4 @@
-<div>
-  <div>
-    <%= render @bounty %>
-    <% if user_signed_in? && current_user == @bounty.user %>
-      <%= link_to 'Edit this bounty', edit_bounty_path(@bounty), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      <div class="inline-block ml-2">
-        <%= button_to 'Destroy this bounty', bounty_path(@bounty), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-      </div>
-    <% end %>
-    <%= link_to 'Back to bounties', bounties_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  </div>
+<div class="space-y-4">
+  <%= link_to '← Back to bounties', bounties_path, class: "no-underline" %>
+  <%= render @bounty %>
 </div>
