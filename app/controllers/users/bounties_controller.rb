@@ -56,4 +56,3 @@ class Users::BountiesController < ApplicationController
       params.require(:bounty).permit(:user_id, :title, :description, :url, :amount, :status)
     end
 end
-
