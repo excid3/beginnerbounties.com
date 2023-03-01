@@ -53,7 +53,7 @@ class Users::BountiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bounty_params
-      params.require(:bounty).permit(:user_id, :title, :description, :url, :amount, :status)
+      params.require(:bounty).permit(:title, :description, :url, :amount, :status)
     end
 end
 
