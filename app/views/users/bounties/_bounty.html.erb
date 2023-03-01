@@ -14,7 +14,7 @@
   <div class="bg-gray-50 -mx-8 px-8 py-4">
     <div class="flex items-center justify-between gap-8">
       <%= form_for bounty, url: users_bounty_path(bounty), method: :patch do |f| %>
-        <%= f.select :status, Bounty::STATUSES.map{|s| [s.humanize, s] }, {}, {class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full w-32", onchange: "this.form.submit()"} %>
+        <%= f.select :status, Bounty::STATUSES.map{|s| [s.humanize, s] }, {}, {class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mr-5 mt-2 w-full w-full", onchange: "this.form.submit()"} %>
       <% end %>
 
       <%= link_to bounty.url, class: "no-underline flex items-center gap-1", target: :_blank do %>
