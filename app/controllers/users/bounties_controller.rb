@@ -3,7 +3,7 @@ class Users::BountiesController < ApplicationController
 
   # GET /bounties
   def index
-    @bounties = current_user.bounties.sorted
+    @bounties = current_user.bounties.sorted.sort_by(&:created_at).reverse
   end
 
   # GET /bounties/1
@@ -56,4 +56,3 @@ class Users::BountiesController < ApplicationController
       params.require(:bounty).permit(:user_id, :title, :description, :url, :amount, :status)
     end
 end
-

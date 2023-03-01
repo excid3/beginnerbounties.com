@@ -3,7 +3,7 @@ class BountiesController < ApplicationController
 
   # GET /bounties or /bounties.json
   def index
-    @bounties = Bounty.sorted
+    @bounties = Bounty.sorted.sort_by(&:created_at).reverse
   end
 
   # GET /bounties/1 or /bounties/1.json
