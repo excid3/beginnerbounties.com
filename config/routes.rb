@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :bounties
 
+  get "/how-it-works", to: "static#how_it_works"
+
   # Defines the root path route ("/")
   root "bounties#index"
 end
