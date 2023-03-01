@@ -1,0 +1,2 @@
+module BountiesHelper
+end

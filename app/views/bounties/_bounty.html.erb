@@ -1,0 +1,37 @@
+<div id="<%= dom_id bounty %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= bounty.user_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= bounty.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= bounty.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Url:</strong>
+    <%= bounty.url %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Amount:</strong>
+    <%= bounty.amount %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Status:</strong>
+    <%= bounty.status %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this bounty", bounty, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this bounty', edit_bounty_path(bounty), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
