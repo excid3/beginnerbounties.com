@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full">
   <head>
     <title>
       <%= content_for?(:title) ? "#{yield(:title)} | Beginner Bounties" : "Beginner Bounties" %>
@@ -20,17 +20,20 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-gray-50">
-    <%= render "shared/navbar" %>
 
-    <% if notice.present? %>
-      <div class="max-w-7xl mx-auto py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg" id="notice"><%= notice %></div>
-    <% end %>
+  <body class="flex flex-col h-screen justify-between">
+    <main>
+      <%= render "shared/navbar" %>
 
-    <main class="max-w-7xl mx-auto p-6 lg:px-8 prose h-screen">
-      <%= yield %>
+      <% if notice.present? %>
+        <div class="max-w-7xl mx-auto py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg" id="notice"><%= notice %></div>
+      <% end %>
+
+      <div class="max-w-7xl mx-auto p-6 lg:px-8 prose">
+        <%= yield %>
+      </div>
+
     </main>
-
     <footer>
       <%= render "shared/footer" %>
     </footer>
