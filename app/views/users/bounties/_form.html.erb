@@ -38,7 +38,13 @@
     </div>
   <% end %>
 
-  <div class="inline">
+  <div class="flex">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <% if form.object.persisted? %>
+      <%= link_to "Cancel", users_bounty_path(form.object), class: "no-underline ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <div class="flex w-full justify-end">
+        <%= link_to "Delete", users_bounty_path(form.object), data: { turbo_confirm: "Are you sure?", turbo_method: :delete }, class: "no-underline ml-2 rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium" %>
+      </div>
+    <% end %>
   </div>
 <% end %>
