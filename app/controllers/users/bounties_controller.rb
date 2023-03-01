@@ -3,7 +3,7 @@ class Users::BountiesController < ApplicationController
 
   # GET /bounties
   def index
-    @bounties = current_user.bounties.sorted.sort_by(&:created_at).reverse
+    @bounties = current_user.bounties.sorted
   end
 
   # GET /bounties/1
