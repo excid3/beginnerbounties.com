@@ -11,8 +11,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="bg-gray-50">
+    <%= render "shared/navbar" %>
+
+    <% if notice.present? %>
+      <div class="max-w-7xl mx-auto py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg" id="notice"><%= notice %></div>
+    <% end %>
+
+    <main class="max-w-7xl mx-auto p-6 lg:px-8 prose">
       <%= yield %>
     </main>
   </body>

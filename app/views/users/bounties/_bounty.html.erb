@@ -1,15 +1,15 @@
-<div id="<%= dom_id bounty %>" class="mb-8 bg-white border shadow rounded-md pt-8 px-8">
-  <div class="flex justify-between gap-8">
-    <div>
-      <div class="mb-4 text-2xl font-bold text-green-600">
-        <%= number_to_currency bounty.amount, precision: 0 %>
-      </div>
-
-      <h2 class="m-0"><%= bounty.title %></h2>
-      <div class="text-sm">Created by <%= bounty.user.name %></div>
-      <%= simple_format truncate(bounty.description.to_plain_text, length: 1000) %>
+<div id="<%= dom_id bounty %>" class="bg-white mb-8 border shadow rounded-md pt-8 px-8">
+  <div class="flex justify-between">
+    <div class="mb-4 text-2xl font-bold text-green-600">
+      <%= number_to_currency bounty.amount, precision: 0 %>
     </div>
+
+    <%= link_to 'Edit this bounty', edit_users_bounty_path(bounty), class: "text-blue-500 no-underline hover:underline" %>
   </div>
+
+  <h2 class="m-0"><%= bounty.title %></h2>
+  <div class="text-sm">Created by <%= bounty.user.name %></div>
+  <%= simple_format truncate(bounty.description.to_plain_text, length: 1000) %>
 
   <div class="bg-gray-50 -mx-8 px-8 py-4">
     <div class="flex items-center justify-between gap-8">
