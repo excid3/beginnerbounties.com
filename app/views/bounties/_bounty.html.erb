@@ -1,11 +1,11 @@
 <div id="<%= dom_id bounty %>" class="mb-8 bg-white border shadow rounded-md pt-8 px-8">
   <div class="flex justify-between gap-8">
-    <div>
+    <div class="[overflow-wrap:anywhere]">
       <div class="mb-4 text-2xl font-bold text-green-600">
         <%= number_to_currency bounty.amount, precision: 0 %>
       </div>
 
-      <h2 class="m-0 [overflow-wrap:anywhere]"><%= link_to bounty.title, bounty_path(bounty) %></h2>
+      <h2 class="m-0"><%= link_to bounty.title, bounty_path(bounty) %></h2>
       <div class="text-sm">Created by <%= bounty.user.name %></div>
       <%= simple_format truncate(bounty.description.to_plain_text, length: 1000) %>
     </div>
