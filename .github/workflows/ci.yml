@@ -1,0 +1,58 @@
+name: Tests
+
+on:
+  # pull_request:
+  #   branches:
+  #     - "*"
+  push:
+    branches:
+      - github-actions
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+        ports: ["5432:5432"]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.138.0
+        with:
+          ruby-version: 3.2.1
+
+      # - name: Setup Node
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: "18"
+      #     cache: yarn
+
+      # - name: Install dependencies
+      #   run: |
+      #     sudo apt-get install -y -qq libvips
+      #     yarn install --frozen-lockfile
+
+      - name: Install Bundler & Gems
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+
+      - name: Standardrb Check
+        uses: amoeba/standardrb-action@7eaa3068fd63f2e2a0dc6fcf98711dc0fb8fb28e
+
+      - name: Run tests
+        env:
+          DATABASE_URL: postgres://postgres:password@localhost:5432/test
+          RAILS_ENV: test
+          PG_USER: postgres
+        run: |
+          bin/rails test:prepare
+          bin/rails db:test:prepare
+          bin/rails test
+          bin/rails test:system
