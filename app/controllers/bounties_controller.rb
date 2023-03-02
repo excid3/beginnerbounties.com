@@ -1,9 +1,11 @@
 class BountiesController < ApplicationController
+  include Pagy::Backend
+
   before_action :set_bounty, only: %i[ show edit update destroy ]
 
   # GET /bounties or /bounties.json
   def index
-    @bounties = Bounty.sorted
+    @pagy, @bounties = pagy(Bounty.sorted)
   end
 
   # GET /bounties/1 or /bounties/1.json
