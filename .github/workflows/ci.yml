@@ -29,9 +29,6 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3.6.0
-        with:
-          node-version: "18"
-          cache: yarn
 
       - name: Install dependencies
         run: |
