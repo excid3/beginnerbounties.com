@@ -5,27 +5,25 @@ Help new developers get their first paid work and build their resumes to help th
 ## Development
 
 
-To Get up and running on Development Environment, check out to the repo, run
+To Get up and running on Development Environment, check out to the repo & execute
 
-```ruby
-$ rvm install "ruby-3.2.1"
-```
+	$ rvm install "ruby-3.2.1"
+
 Install all dependencies with bundle
-```
-$ bundle install
-```
+
+	$ bundle install
+
 Setup Database
-```
-$ rake db:create
-```
+
+	$ rake db:create
+
 Run migrations
-```
-$ rake db:migrate --trace
-```
+
+	$ rake db:migrate --trace
+
 Precompile assets
-```
-$ rake db:migrate --trace
-```
+
+	$ rake db:migrate --trace
 
 
 
