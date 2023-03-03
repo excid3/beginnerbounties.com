@@ -6,7 +6,7 @@ on:
       - "*"
   push:
     branches:
-      - main
+      - github-actions
 
 jobs:
   test:
@@ -28,9 +28,9 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.138.0
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.1
+          ruby-version: 3.2
 
       - name: Setup Node
         uses: actions/setup-node@v3.6.0
