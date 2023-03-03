@@ -33,7 +33,7 @@ jobs:
           ruby-version: 3.2
 
       - name: Setup Node
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3
 
       - name: Install dependencies
         run: |
