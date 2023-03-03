@@ -1,8 +1,10 @@
 <div class="flex justify-between items-center">
   <h2 class="mt-0">My Bounties</h2>
-  <%= link_to "New Bounty", new_users_bounty_path %>
+  <%= link_to "New Bounty", new_users_bounty_path, class: "pb-6" %>
 </div>
 
 <div id="bounties" class="min-w-full">
   <%= render @bounties %>
 </div>
+
+<%== pagy_nav(@pagy).html_safe %>

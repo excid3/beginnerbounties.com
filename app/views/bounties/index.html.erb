@@ -2,8 +2,10 @@
   <%= render 'hero' %>
 <% end %>
 
-<h2 class="mt-0">All Bounties</h2>
+<h2>All Bounties</h2>
 
 <div id="bounties">
   <%= render @bounties %>
 </div>
+
+<%== pagy_nav(@pagy).html_safe %>

@@ -5,7 +5,7 @@
         <%= number_to_currency bounty.amount, precision: 0 %>
       </div>
 
-      <h2 class="m-0"><%= link_to bounty.title, bounty_path(bounty) %></h2>
+      <h2 class="m-0 [overflow-wrap:anywhere]"><%= link_to bounty.title, bounty_path(bounty) %></h2>
       <div class="text-sm">Created by <%= bounty.user.name %></div>
       <%= simple_format truncate(bounty.description.to_plain_text, length: 1000) %>
     </div>
