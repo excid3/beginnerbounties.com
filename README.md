@@ -4,6 +4,8 @@ Help new developers get their first paid work and build their resumes to help th
 
 ## Development
 
+A GitHub fork is a copy of a repository (repo) that sits in your account rather than the account from which you forked the data from. Once you have forked a repo, you own your forked copy. This means that you can edit the contents of your forked repository without impacting the parent repo. Follow [Github instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) on how to Fork this repository.
+
 
 To Get up and running on Development Environment, check out to the repo & execute
 
