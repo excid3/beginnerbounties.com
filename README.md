@@ -4,29 +4,29 @@ Help new developers get their first paid work and build their resumes to help th
 
 ## Development
 
-A GitHub fork is a copy of a repository (repo) that sits in your account rather than the account from which you forked the data from. Once you have forked a repo, you own your forked copy. This means that you can edit the contents of your forked repository without impacting the parent repo. Follow [Github instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) on how to Fork this repository.
+1. Follow [Github instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) on how to Fork this repository.
 
 
-To Get up and running on Development Environment, check out to the repo & execute
+2. To Get up and running on Development Environment, check out to the repo & execute
 
-    $ rvm install "ruby-3.2.1"
+        $ rvm install "ruby-3.2.1"
 
-Install all dependencies with bundle
+3. Install all dependencies with bundle
 
-    $ bundle install
+        $ bundle install
 
-Setup Database
+4. Setup Database and run migrations
 
-    $ rake db:create
+        $ rake db:create
+        $ rake db:migrate --trace
 
-Run migrations
+5. Precompile assets
 
-    $ rake db:migrate --trace
+        $ bundle exec rake assets:precompile
 
-Precompile assets
+6. Start the web server with
 
-    $ rake db:migrate --trace
-
+        $ ./bin/dev
 
 
 run `bin/rails test:all` to run the tests. You can also run `rails c` for an interactive prompt that will allow you to experiment.
