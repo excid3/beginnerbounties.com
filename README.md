@@ -19,6 +19,7 @@ Help new developers get their first paid work and build their resumes to help th
 
         $ rake db:create
         $ rake db:migrate --trace
+
 5. Start the web server with
 
         $ ./bin/dev
