@@ -1,16 +1,18 @@
 <h2>Sign up</h2>
 
+<% label_css = "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-half" %>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, placeholder: "", autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, placeholder: "", autofocus: true, autocomplete: "name", class: label_css %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, placeholder: "dog@thebountyhunter.com", autocomplete: "email" %>
+    <%= f.email_field :email, placeholder: "dog@thebountyhunter.com", autocomplete: "email", class: label_css %>
   </div>
 
   <div class="field">
@@ -18,15 +20,15 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: label_css %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: label_css %>
   </div>
 
-  <div class="actions">
+  <div class="actions rounded-lg py-2 px-3 mt-5 bg-blue-600 text-white inline-block font-medium cursor-pointer">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
