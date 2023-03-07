@@ -16,6 +16,7 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 gem "letter_opener", group: :development
+gem 'whenever', require: false
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
