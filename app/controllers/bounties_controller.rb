@@ -12,6 +12,18 @@ class BountiesController < ApplicationController
   def show
   end
 
+  def filters
+  end
+
+  def open_filter
+  end
+
+  def assigned_filter
+  end
+
+  def completed_filter
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bounty

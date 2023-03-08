@@ -3,9 +3,7 @@
 <% end %>
 
 <%= turbo_frame_tag "current_filter" do %>
-  <h2>All Bounties</h2>
+  <h2>Open Bounties</h2>
   <%= render 'shared/bounties_filter' %>
-  <%= render Bounty.all %>
+  <%= render Bounty.where(status: "open") %>
 <% end %>
-
-<%== pagy_nav(@pagy).html_safe %>

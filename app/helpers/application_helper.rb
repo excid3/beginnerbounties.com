@@ -29,4 +29,10 @@ module ApplicationHelper
 
     link_to name, url, html_options
   end
+
+  def filter_link_to(text, path, options = {})
+    options[:class] = options[:class] || ""
+    options[:class] += " #{options[:active_class]}" if current_page?(path)
+    link_to text, path, options
+  end
 end

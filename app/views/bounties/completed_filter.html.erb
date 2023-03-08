@@ -3,9 +3,9 @@
 <% end %>
 
 <%= turbo_frame_tag "current_filter" do %>
-  <h2>All Bounties</h2>
+  <h2>Completed Bounties</h2>
   <%= render 'shared/bounties_filter' %>
-  <%= render Bounty.all %>
-<% end %>
 
-<%== pagy_nav(@pagy).html_safe %>
+  <%= render Bounty.where(status: "complete") %>
+
+<% end %>

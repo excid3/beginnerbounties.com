@@ -1,5 +1,15 @@
-<ul>
-  <%= status_badge 'open' %>
-  <%= status_badge 'assigned' %>
-  <%= status_badge 'complete' %>
-<ul>
+<nav class="-mb-px flex space-x-8" aria-label="Tabs">
+  <%= filter_link_to "all", bounties_path,
+    active_class: "border-indigo-500 text-indigo-600",
+    class: "whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" %>
+  <%= filter_link_to "open", open_filter_path,
+    active_class: "border-indigo-500 text-indigo-600",
+    class: "whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" %>
+  <%= filter_link_to "assigned", assigned_filter_path,
+    active_class: "border-indigo-500 text-indigo-600",
+    class: "whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" %>
+  <%= filter_link_to "completed", completed_filter_path,
+    active_class: "border-indigo-500 text-indigo-600",
+    class: "whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" %>
+</nav>
+

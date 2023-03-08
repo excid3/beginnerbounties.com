@@ -13,6 +13,11 @@ Rails.application.routes.draw do
 
   get "/how-it-works", to: "static#how_it_works"
 
+  get 'filters', to: 'bounties#filters'
+  get 'open_filter', to: 'bounties#open_filter'
+  get 'assigned_filter', to: 'bounties#assigned_filter'
+  get 'completed_filter', to: 'bounties#completed_filter'
+
   # Defines the root path route ("/")
   root "bounties#index"
 end
