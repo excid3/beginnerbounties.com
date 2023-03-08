@@ -1,15 +1,17 @@
-<nav class="-mb-px flex space-x-8" aria-label="Tabs">
-  <%= filter_link_to "all", bounties_path,
-    active_class: "border-indigo-500 text-indigo-600",
-    class: "whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" %>
-  <%= filter_link_to "open", open_filter_path,
-    active_class: "border-indigo-500 text-indigo-600",
-    class: "whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" %>
-  <%= filter_link_to "assigned", assigned_filter_path,
-    active_class: "border-indigo-500 text-indigo-600",
-    class: "whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" %>
-  <%= filter_link_to "completed", completed_filter_path,
-    active_class: "border-indigo-500 text-indigo-600",
-    class: "whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" %>
-</nav>
+<div class="flex mb-4">
+  <nav>
+    <%= filter_link_to "all", bounties_path,
+      active_class: "border-indigo-500 text-indigo-600",
+      class: "border-b-2 text-sm font-medium no-underline" %>
+    <%= filter_link_to "open", open_filter_path,
+      active_class: "border-indigo-500",
+      class: "border-b-2 text-sm font-medium no-underline" %>
+    <%= filter_link_to "assigned", assigned_filter_path,
+      active_class: "border-indigo-500",
+      class: "border-b-2 text-sm font-medium no-underline" %>
+    <%= filter_link_to "completed", completed_filter_path,
+      active_class: "border-indigo-500",
+      class: "border-b-2 text-sm font-medium no-underline" %>
+  </nav>
+</div>
 
