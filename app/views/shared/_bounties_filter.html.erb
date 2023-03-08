@@ -1,0 +1,17 @@
+<div class="flex mb-4">
+  <nav>
+    <%= filter_link_to "all", bounties_path,
+      active_class: "border-indigo-500 text-indigo-600",
+      class: "border-b-2 text-sm font-medium no-underline" %>
+    <%= filter_link_to "open", open_filter_path,
+      active_class: "border-indigo-500",
+      class: "border-b-2 text-sm font-medium no-underline" %>
+    <%= filter_link_to "assigned", assigned_filter_path,
+      active_class: "border-indigo-500",
+      class: "border-b-2 text-sm font-medium no-underline" %>
+    <%= filter_link_to "completed", completed_filter_path,
+      active_class: "border-indigo-500",
+      class: "border-b-2 text-sm font-medium no-underline" %>
+  </nav>
+</div>
+
