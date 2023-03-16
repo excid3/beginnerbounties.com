@@ -2,14 +2,14 @@
 
 one:
   user: one
-  title: MyString
-  url: MyString
-  amount: MyString
-  status: MyString
+  title: First Bounty
+  url: http://www.google.com/
+  amount: 10
+  status: open
 
 two:
-  user: two
-  title: MyString
-  url: MyString
-  amount: MyString
-  status: MyString
+  user: one
+  title: Second Bounty
+  url: http://www.firefox.com/
+  amount: 32
+  status: assigned
