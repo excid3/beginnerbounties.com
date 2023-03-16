@@ -5,7 +5,7 @@ class Bounty < ApplicationRecord
   has_rich_text :description
 
   scope :sorted, -> { in_order_of(:status, STATUSES).order(created_at: :desc) }
-  scope :last_fifteen_open_bounties, -> { where(status: "open").last(15) }
+  scope :open, -> { where(status: "open") }
 
   validates :amount, presence: true, numericality: {greater_than: 0, only_integer: true}
   validates :description, presence: true

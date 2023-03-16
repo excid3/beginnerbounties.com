@@ -1,6 +1,6 @@
 desc 'send open bounties email'
 task send_bounty_email: :environment do
-  @bounties = Bounty.last_fifteen_open_bounties
+  @bounties = Bounty.open.last(15)
   if @bounties.any?
     @users = User.all
     @users.each do |user|
