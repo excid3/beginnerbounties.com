@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <p><strong>The open bounties for this week:</strong></p>
-
-    <% @bounty.each do |bounty| %>
-      <h3><%= bounty.title %></h3>
-      <p>Amount: <%= bounty.amount %>$</p>
-      <p><%= link_to "View the source code", bounty.url %></p>
-    <% end %>
-  </body>
-</html>
+<p><strong>The open bounties for this week:</strong></p>
+  <% @bounties.each do |bounty| %>
+    <h3><%= bounty.title %></h3>
+    <p>Amount: <%= bounty.amount %>$</p>
+    <p><%= link_to "View the source code", bounty.url %></p>
+  <% end %>
