@@ -1,4 +1,5 @@
 <h2>Change your password</h2>
+<% label_css = "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-half" %>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -9,12 +10,12 @@
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
     <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: label_css %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: label_css %>
   </div>
 
   <div class="actions">
