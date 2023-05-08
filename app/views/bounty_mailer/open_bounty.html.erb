@@ -1,0 +1,6 @@
+<p><strong>The open bounties for this week:</strong></p>
+  <% @bounties.each do |bounty| %>
+    <h3><%= bounty.title %></h3>
+    <p>Amount: <%= bounty.amount %>$</p>
+    <p><%= link_to "View the source code", bounty.url %></p>
+  <% end %>
