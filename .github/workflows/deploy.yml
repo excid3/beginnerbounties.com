@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - Deploy to Hatchbox
+      - name: Deploy to Hatchbox
         uses: hatchboxio/github-hatchbox-deploy-action@v2
         with:
           deploy_key: ${{ secrets.HATCHBOX_DEPLOY_KEY }}
