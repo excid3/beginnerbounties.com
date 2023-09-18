@@ -1,7 +1,7 @@
 class Users::BountiesController < ApplicationController
   include Pagy::Backend
 
-  before_action :set_bounty, only: %i[ show edit update destroy ]
+  before_action :set_bounty, only: %i[show edit update destroy]
 
   # GET /bounties
   def index

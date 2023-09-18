@@ -3,13 +3,13 @@
 one:
   user: one
   title: MyString
-  url: MyString
-  amount: MyString
+  url: https://example.org
+  amount: 10
   status: MyString
 
 two:
   user: two
   title: MyString
-  url: MyString
-  amount: MyString
+  url: https://example.org
+  amount: 25
   status: MyString

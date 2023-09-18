@@ -2,48 +2,39 @@ require "application_system_test_case"
 
 class BountiesTest < ApplicationSystemTestCase
   setup do
+    sign_in users(:one)
     @bounty = bounties(:one)
   end
 
   test "visiting the index" do
-    visit bounties_url
-    assert_selector "h1", text: "Bounties"
+    visit users_bounties_url
+    assert_selector "h2", text: "My Bounties"
   end
 
   test "should create bounty" do
-    visit bounties_url
-    click_on "New bounty"
-
+    visit users_bounties_url
+    click_on "New Bounty"
     fill_in "Amount", with: @bounty.amount
-    fill_in "Status", with: @bounty.status
     fill_in "Title", with: @bounty.title
+    fill_in_rich_text_area "Description", with: @bounty.description
     fill_in "Url", with: @bounty.url
-    fill_in "User", with: @bounty.user_id
     click_on "Create Bounty"
-
     assert_text "Bounty was successfully created"
-    click_on "Back"
   end
 
   test "should update Bounty" do
-    visit bounty_url(@bounty)
+    visit users_bounty_url(@bounty)
     click_on "Edit this bounty", match: :first
-
-    fill_in "Amount", with: @bounty.amount
-    fill_in "Status", with: @bounty.status
-    fill_in "Title", with: @bounty.title
-    fill_in "Url", with: @bounty.url
-    fill_in "User", with: @bounty.user_id
+    fill_in "Amount", with: @bounty.amount + 10
     click_on "Update Bounty"
-
     assert_text "Bounty was successfully updated"
-    click_on "Back"
   end
 
   test "should destroy Bounty" do
-    visit bounty_url(@bounty)
-    click_on "Destroy this bounty", match: :first
-
+    visit edit_users_bounty_url(@bounty)
+    page.accept_confirm do
+      click_on "Delete", match: :first
+    end
     assert_text "Bounty was successfully destroyed"
   end
 end

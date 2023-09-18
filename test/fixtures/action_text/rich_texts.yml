@@ -1,4 +1,4 @@
-# one:
-#   record: name_of_fixture (ClassOfFixture)
-#   name: content
-#   body: <p>In a <i>million</i> stars!</p>
+one:
+  record: one (Bounty)
+  name: description
+  body: <p>In a <i>million</i> stars!</p>
