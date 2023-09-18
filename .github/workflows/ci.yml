@@ -56,14 +56,3 @@ jobs:
         run: |
           bin/rails db:test:prepare
           bin/rails test:all
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: test
-    if: github.ref == 'refs/heads/main'
-    environment: production
-    steps:
-      - Deploy to Hatchbox
-        uses: hatchboxio/github-hatchbox-deploy-action@v2
-        with:
-          deploy_key: ${{ secrets.HATCHBOX_DEPLOY_KEY }}
