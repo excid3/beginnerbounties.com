@@ -7,9 +7,11 @@
     <%= link_to 'Edit this bounty', edit_users_bounty_path(bounty), class: "text-blue-500 no-underline hover:underline" %>
   </div>
 
-  <h2 class="m-0"><%= bounty.title %></h2>
-  <div class="text-sm">Created by <%= bounty.user.name %></div>
-  <%= simple_format truncate(bounty.description.to_plain_text, length: 1000) %>
+  <div class="[overflow-wrap:anywhere]">
+    <h2 class="m-0 break-words"><%= bounty.title %></h2>
+    <div class="text-sm">Created by <%= bounty.user.name %></div>
+    <%= simple_format truncate(bounty.description.to_plain_text, length: 1000) %>
+  </div>
 
   <div class="bg-gray-50 -mx-8 px-8 py-4">
     <div class="flex items-center justify-between gap-8">

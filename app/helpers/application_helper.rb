@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+  
   def nav_link_to(name = nil, options = {}, html_options = {}, &block)
     if block
       html_options = options

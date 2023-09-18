@@ -45,6 +45,8 @@
       <div class="flex w-full justify-end">
         <%= link_to "Delete", users_bounty_path(form.object), data: { turbo_confirm: "Are you sure?", turbo_method: :delete }, class: "no-underline ml-2 rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium" %>
       </div>
+    <% else %>
+      <%= link_to "Cancel", bounties_path, class: "no-underline ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <% end %>
   </div>
 <% end %>
