@@ -5,11 +5,11 @@ one:
   title: MyString
   url: https://example.org
   amount: 10
-  status: MyString
+  status: open
 
 two:
   user: two
   title: MyString
   url: https://example.org
   amount: 25
-  status: MyString
+  status: complete

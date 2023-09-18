@@ -36,7 +36,7 @@ class BountiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update bounty" do
     patch users_bounty_url(@bounty), params: {bounty: {amount: @bounty.amount + 10}}
-    assert_redirected_to bounty_url(@bounty)
+    assert_redirected_to users_bounty_url(@bounty)
   end
 
   test "should destroy bounty" do
