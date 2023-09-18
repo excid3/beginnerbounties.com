@@ -17,7 +17,7 @@ class BountiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create bounty" do
     assert_difference("Bounty.count") do
-      post bounties_url, params: { bounty: { amount: @bounty.amount, status: @bounty.status, title: @bounty.title, url: @bounty.url, user_id: @bounty.user_id } }
+      post bounties_url, params: {bounty: {amount: @bounty.amount, status: @bounty.status, title: @bounty.title, url: @bounty.url, user_id: @bounty.user_id}}
     end
 
     assert_redirected_to bounty_url(Bounty.last)
@@ -34,7 +34,7 @@ class BountiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update bounty" do
-    patch bounty_url(@bounty), params: { bounty: { amount: @bounty.amount, status: @bounty.status, title: @bounty.title, url: @bounty.url, user_id: @bounty.user_id } }
+    patch bounty_url(@bounty), params: {bounty: {amount: @bounty.amount, status: @bounty.status, title: @bounty.title, url: @bounty.url, user_id: @bounty.user_id}}
     assert_redirected_to bounty_url(@bounty)
   end
 

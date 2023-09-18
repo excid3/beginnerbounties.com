@@ -48,13 +48,14 @@ class Users::BountiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_bounty
-      @bounty = current_user.bounties.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def bounty_params
-      params.require(:bounty).permit(:title, :description, :url, :amount, :status)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_bounty
+    @bounty = current_user.bounties.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def bounty_params
+    params.require(:bounty).permit(:title, :description, :url, :amount, :status)
+  end
 end
