@@ -1,7 +1,7 @@
 class BountiesController < ApplicationController
   include Pagy::Backend
 
-  before_action :set_bounty, only: %i[show edit update destroy]
+  before_action :set_bounty, only: %i[show]
 
   # GET /bounties or /bounties.json
   def index
