@@ -27,5 +27,5 @@
 }
 
 .pagy-nav > span.active {
-  @apply bg-indigo-600 text-white font-bold;
+  @apply bg-indigo-600 text-white;
 }
