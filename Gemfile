@@ -80,3 +80,5 @@ gem "devise", "~> 4.9"
 gem "name_of_person", "~> 1.1"
 
 gem "pagy", "~> 6.0"
+
+gem "mailpace-rails", "~> 0.3.2"
