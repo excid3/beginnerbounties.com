@@ -5,7 +5,9 @@ class BountiesController < ApplicationController
 
   # GET /bounties or /bounties.json
   def index
-    @pagy, @bounties = pagy(Bounty.sorted)
+    @bounties = Bounty.sorted
+    @filter, @bounties = params[:filter], @bounties.filtered(params[:filter]) if Bounty::STATUSES.include?(params[:filter])
+    @pagy, @bounties = pagy(@bounties)
   end
 
   # GET /bounties/1 or /bounties/1.json

@@ -5,6 +5,7 @@ class Bounty < ApplicationRecord
   has_rich_text :description
 
   scope :sorted, -> { in_order_of(:status, STATUSES).order(created_at: :desc) }
+  scope :filtered, ->(status) { where(status: status) }
 
   validates :amount, presence: true, numericality: {greater_than: 0, only_integer: true}
   validates :description, presence: true
