@@ -19,10 +19,10 @@ lipsum = [
 "Fusce sollicitudin gravida arcu, et tempus dui congue quis. Nulla egestas lacus libero, non rhoncus massa fringilla at. Nullam pretium diam nec posuere faucibus. Curabitur rhoncus sed leo at efficitur. Maecenas consequat blandit cursus. Sed ornare libero vel luctus hendrerit. Vivamus pretium ultricies erat, at accumsan erat suscipit vehicula. Proin tincidunt nibh non tincidunt blandit."
 ]
 
-45.times do |i|
+95.times do |i|
   user.bounties.create(
     title: "Bounty ##{i}",
-    description: lipsum[(i/4).floor],
+    description: lipsum[rand(0..4)],
     url: "https://github.com/excid3/beginnerbounties.com",
     amount: rand(25..200),
   )
