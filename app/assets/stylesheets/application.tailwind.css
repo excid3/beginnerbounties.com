@@ -11,4 +11,21 @@
 }
 
 */
+
 @import 'actiontext.css';
+
+
+.pagy-nav,
+.pagy-nav-js {
+  @apply flex space-x-2 md:space-x-4 justify-center;
+}
+
+.pagy-nav a,
+.pagy-nav span.disabled,
+.pagy-nav span.active {
+  @apply no-underline inline-block py-0.5 px-2 bg-gray-200 rounded;
+}
+
+.pagy-nav > span.active {
+  @apply bg-indigo-600 text-white;
+}
