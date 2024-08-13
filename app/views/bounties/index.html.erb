@@ -12,8 +12,18 @@
   </nav>
 </div>
 
-<div id="bounties">
-  <%= render @bounties %>
-</div>
+<% if @bounties.present? %>
+  <div id="bounties">
+    <%= render @bounties %>
+  </div>
 
-<%== pagy_nav(@pagy).html_safe %>
+  <%== pagy_nav(@pagy).html_safe %>
+<% else %>
+  <% if @filter == "open" %>
+    <p class="m-8 md:m-12 text-center italic text-lg md:text-xl">
+      There are no open bounties right now.
+      <br>
+      Spread the word that we need people to post new Beginner Bounties!
+    </p>
+  <% end %>
+<% end %>
