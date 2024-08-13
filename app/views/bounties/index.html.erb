@@ -5,7 +5,7 @@
 <div class="my-8 flex gap-2 items-center justify-between">
   <h2 class="m-0"><%= (@filter || "All").titleize %> Bounties</h2>
   <nav class="flex gap-2">
-    <%= link_to "All", bounties_path, class: class_names("font-bold" => @filter.blank?) %>
+    <%= link_to "All", bounties_path(filter: "none"), class: class_names("font-bold" => @filter.blank?) %>
     <% Bounty::STATUSES.each do |status| %>
       <%= link_to status.titleize, bounties_path(filter: status), class: class_names("font-bold" => status == @filter) %>
     <% end %>
