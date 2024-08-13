@@ -5,6 +5,7 @@ class BountiesController < ApplicationController
 
   # GET /bounties or /bounties.json
   def index
+    params[:filter] = "open" if params[:filter].nil?
     @bounties = Bounty.sorted
     @filter, @bounties = params[:filter], @bounties.filtered(params[:filter]) if Bounty::STATUSES.include?(params[:filter])
     @pagy, @bounties = pagy(@bounties)
