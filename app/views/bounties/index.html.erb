@@ -5,15 +5,25 @@
 <div class="my-8 flex gap-2 items-center justify-between">
   <h2 class="m-0"><%= (@filter || "All").titleize %> Bounties</h2>
   <nav class="flex gap-2">
-    <%= link_to "All", bounties_path, class: class_names("font-bold" => @filter.blank?) %>
+    <%= link_to "All", bounties_path(filter: "none"), class: class_names("font-bold" => @filter.blank?) %>
     <% Bounty::STATUSES.each do |status| %>
       <%= link_to status.titleize, bounties_path(filter: status), class: class_names("font-bold" => status == @filter) %>
     <% end %>
   </nav>
 </div>
 
-<div id="bounties">
-  <%= render @bounties %>
-</div>
+<% if @bounties.present? %>
+  <div id="bounties">
+    <%= render @bounties %>
+  </div>
 
-<%== pagy_nav(@pagy).html_safe %>
+  <%== pagy_nav(@pagy).html_safe %>
+<% else %>
+  <% if @filter == "open" %>
+    <p class="m-8 md:m-12 text-center italic text-lg md:text-xl">
+      There are no open bounties right now.
+      <br>
+      Spread the word that we need people to post new Beginner Bounties!
+    </p>
+  <% end %>
+<% end %>
