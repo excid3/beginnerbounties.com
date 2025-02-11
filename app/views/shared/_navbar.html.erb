@@ -11,18 +11,17 @@
     <% end %>
 
     <div class="text-sm md:text-base flex lg:gap-x-12">
-      <% if user_signed_in? %>
-        <%= nav_link_to "My Bounties", users_bounties_path, class: "text-white text-sm font-semibold leading-6", active_class: "border-b-2 border-indigo-500 px-2.5 -mx-2.5" %>
-      <% end %>
+      <%= nav_link_to "Bounties", bounties_path, class: "text-white text-sm font-semibold leading-6", active_class: "border-b-2 border-indigo-500 px-2.5 -mx-2.5" %>
     </div>
     <div class="flex flex-1 items-center justify-end gap-x-6">
       <%= nav_link_to "Post a bounty", new_users_bounty_path, class: "rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
       <% if user_signed_in? %>
+        <%= nav_link_to "My Bounties", users_bounties_path, class: "text-white text-sm font-semibold leading-6", active_class: "border-b-2 border-indigo-500 px-2.5 -mx-2.5" %>
         <%= link_to "Profile", edit_user_registration_path, class: "text-white text-sm font-semibold leading-6" %>
         <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-white text-sm font-semibold leading-6" %>
       <% else %>
         <%= link_to "Log in", new_user_session_path, class: "text-white text-sm font-semibold leading-6" %>
-        <%= link_to "Sign Up", new_user_registration_path, class: "rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+        <%#= link_to "Sign Up", new_user_registration_path, class: "rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
       <% end %>
     </div>
   </nav>
