@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby file: ".ruby-version"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.0"
+gem "rails", "~> 8.0.0"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -40,7 +40,7 @@ gem "redis", "~> 5.0"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
+gem "tzinfo-data", platforms: %i[windows jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -53,7 +53,7 @@ gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "debug", platforms: %i[mri windows]
   gem "standard"
 end
 
@@ -75,6 +75,6 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
-gem "mailpace-rails", "~> 0.3.2"
+gem "mailpace-rails", "~> 0.4.3"
 gem "name_of_person", "~> 1.1"
-gem "pagy", "~> 7.0"
+gem "pagy", "~> 9.4"
