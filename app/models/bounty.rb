@@ -3,6 +3,7 @@ class Bounty < ApplicationRecord
 
   belongs_to :user
   has_rich_text :description
+  to_param :title
 
   scope :sorted, -> { in_order_of(:status, STATUSES).order(created_at: :desc) }
   scope :filtered, ->(status) { where(status: status) }
