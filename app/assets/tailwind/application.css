@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: InterVariable, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* https://rsms.me/inter/lab */
+  --font-sans--font-feature-settings: 'liga', 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/
+
+@import '../stylesheets/actiontext.css' layer(components);
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+.pagy-nav,
+.pagy-nav-js {
+  @apply flex space-x-2 md:space-x-4 justify-center;
+}
+
+.pagy-nav a,
+.pagy-nav span.disabled,
+.pagy-nav span.active {
+  @apply no-underline inline-block py-0.5 px-2 bg-gray-200 rounded-sm;
+}
+
+.pagy-nav>span.active {
+  @apply bg-indigo-600 text-white;
+}

@@ -15,7 +15,7 @@
     <%= render @bounties %>
   </div>
 
-  <%== pagy_nav(@pagy).html_safe %>
+  <%== @pagy.series_nav %>
 <% else %>
   <% if @filter == "open" %>
     <p class="m-8 md:m-12 text-center italic text-lg md:text-xl">
