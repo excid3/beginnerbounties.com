@@ -1,4 +1,5 @@
 class Bounty < ApplicationRecord
+  has_many :applications, dependent: :destroy
   STATUSES = %w[open assigned complete]
 
   belongs_to :user

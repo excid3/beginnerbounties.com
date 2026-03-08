@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_person_name
 
   has_many :bounties, dependent: :destroy
+  has_many :applications, dependent: :destroy
 end

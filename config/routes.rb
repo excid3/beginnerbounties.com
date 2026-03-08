@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   authenticate do
     namespace :users, path: :my do
-      resources :bounties
+      resources :bounties do
+    resources :applications, only: [:create, :show, :update]
+  end
     end
   end
 
